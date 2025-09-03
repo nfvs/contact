@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Basic CSS to center the fallback link */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    a {
+      font-size: 4em;
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+  <script>
+    function redirect() {
+      var hostname = window.location.hostname;
+      var domain = hostname.substring(hostname.indexOf('.') + 1);
+      var mailtoLink = 'mailto:contact@' + domain;
+      window.location.href = mailtoLink;
+    }
+    redirect();
+  </script>
+</head>
+<body>
+  <!-- Fallback link in case the redirect is blocked or fails. -->
+  <a id="fallback-link" href="#">
+    Contact
+  </a>
+  <script>
+    (function() {
+      var hostname = window.location.hostname;
+      var domain = hostname.substring(hostname.indexOf('.') + 1);
+      var mailtoLink = 'mailto:contact@' + domain;
+      document.getElementById('fallback-link').href = mailtoLink;
+    })();
+  </script>
+</body>
+</html>
