@@ -26,8 +26,12 @@
   </style>
   <script>
     function redirect() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var domainFromParam = urlParams.get('domain');
+
       var hostname = window.location.hostname;
-      var domain = hostname.substring(hostname.indexOf('.') + 1);
+      var domain = domainFromParam || hostname.substring(hostname.indexOf('.') + 1);
+
       var mailtoLink = 'mailto:contact@' + domain;
       window.location.href = mailtoLink;
     }
